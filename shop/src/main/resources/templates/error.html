@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>ログイン</title>
+  <!-- CSS読み込み -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <div class="header">
+	<h2><a th:href="@{/}">Shop</a></h2>
+  </div>
+  <!-- レイアウト -->
+  <div class="content">
+    <!-- メイン -->
+    <div class="container" style="padding:50px;">
+        <p th:text="${error}"></p>
+    <p>ページを表示できません</p>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <div class="footer">
+    <span>Copyright(C)2024 CTC Technology Corporation. All rights reserved.</span>
+  </div>
+</body>
+
+</html>

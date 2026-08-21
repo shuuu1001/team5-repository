@@ -1,0 +1,20 @@
+<th:block th:fragment="sidebar">
+	<p>ログインユーザ</p>
+	<p th:text="${#authentication.name}"></p>
+	<!-- メニュー-->
+	<div class="list-group">
+		<th:block sec:authorize="hasRole('ROLE_ADMIN')">
+			<a class="list-group-item list-group-item-action" th:href="@{/admin/customer_list}">会員管理</a>
+			<a class="list-group-item list-group-item-action" th:href="@{/admin/item_list}">商品一覧</a>
+			<a class="list-group-item list-group-item-action" th:href="@{/admin/item_add}">商品追加</a>
+			<a class="list-group-item list-group-item-action" th:href="@{/admin/purchase_list}">注文管理</a>
+		</th:block>
+		<th:block sec:authorize="hasRole('ROLE_USER')">
+			<a class="list-group-item list-group-item-action" th:href="@{/customer_edit}">会員情報確認</a>
+			<a class="list-group-item list-group-item-action" th:href="@{/item_list}">商品一覧</a>
+			<a class="list-group-item list-group-item-action" th:href="@{/cart}">カート</a>
+			<a class="list-group-item list-group-item-action" th:href="@{/purchase_history}">注文履歴</a>
+		</th:block>
+		<a class="list-group-item list-group-item-action" th:href="@{/logout}">ログアウト</a>
+	</div>
+</th:block>
